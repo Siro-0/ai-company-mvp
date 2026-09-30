@@ -125,7 +125,8 @@ ${idea}`;
   try {
     const outputs = [];
 
-    for (const a of AGENTS) {
+    // 原因切り分けのため、今回は最初の1部署だけ実行
+    for (const a of AGENTS.slice(0, 1)) {
       const output = await askGemini(
         env.GEMINI_API_KEY,
         `役割: ${a.role}
