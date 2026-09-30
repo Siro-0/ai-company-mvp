@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Company MVP</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <p class="eyebrow">AI COMPANY / MVP</p>
+      <h1>AI組織アイデア会議</h1>
+      <p class="sub">人間は頂点。AIは提案・調査・検証・実装計画を担当。</p>
+    </header>
+
+    <section class="card">
+      <label for="idea">あなたのアイデア</label>
+      <textarea id="idea" rows="5" placeholder="例：スマホだけで使える、○○向けの小さなWebサービスを作りたい"></textarea>
+      <button id="run">AI会議を開始</button>
+      <p id="status" class="status"></p>
+    </section>
+
+    <section id="results" class="results"></section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
