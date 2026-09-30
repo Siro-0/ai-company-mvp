@@ -28,7 +28,7 @@ async function askGemini(apiKey, system, user) {
   const body = {
     systemInstruction: {parts:[{text:system}]},
     contents: [{role:"user", parts:[{text:user}]}],
-    generationConfig: {temperature:0.5, maxOutputTokens:900}
+    generationConfig: {maxOutputTokens:900}
   };
   const r = await fetch(url, {
     method:"POST",
