@@ -35,7 +35,10 @@ async function askGemini(apiKey, system, user) {
     headers:{"content-type":"application/json"},
     body:JSON.stringify(body)
   });
-  if (!r.ok) throw new Error(`Gemini API ${r.status}`);
+  if (!r.ok) {
+  const errorText = await r.text();
+  throw new Error(`Gemini API ${r.status}: ${errorText}`);
+}
   const j = await r.json();
   return j.candidates?.[0]?.content?.parts?.map(p=>p.text||"").join("") || "";
 }
